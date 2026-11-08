@@ -1,0 +1,5 @@
+current_wallpaper
+*.bak*
+*.log
+# machine-specific SDDM override
+theme.conf.user

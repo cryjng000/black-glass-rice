@@ -1,0 +1,16 @@
+[config]
+reload_apps = true
+
+[templates.rofi]
+input_path  = "~/.config/matugen/templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+
+[templates.glass_kitty]
+input_path  = "~/.config/matugen/templates/glass-kitty.conf"
+output_path = "~/.config/kitty/matugen-colors.conf"
+post_hook   = "pkill -USR1 -x kitty || true"
+
+[templates.glass_mako]
+input_path  = "~/.config/matugen/templates/glass-mako.conf"
+output_path = "~/.config/mako/config"
+post_hook   = "makoctl reload || true"

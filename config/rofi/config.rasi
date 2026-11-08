@@ -1,0 +1,11 @@
+@theme "~/.config/rofi/glass.rasi"
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "";
+    drun-display-format: "<span size='larger'>{name}</span>[\n<span size='small' alpha='50%'>{generic}</span>]";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}

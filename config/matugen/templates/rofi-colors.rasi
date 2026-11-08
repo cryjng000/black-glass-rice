@@ -1,0 +1,5 @@
+* {
+    mat-accent:      {{colors.primary.default.hex}};
+    mat-accent-soft: rgba({{colors.primary.default.red}}, {{colors.primary.default.green}}, {{colors.primary.default.blue}}, 16%);
+    mat-accent-edge: rgba({{colors.primary.default.red}}, {{colors.primary.default.green}}, {{colors.primary.default.blue}}, 38%);
+}

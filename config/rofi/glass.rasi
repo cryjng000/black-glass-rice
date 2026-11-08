@@ -1,0 +1,187 @@
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    glass:         rgba(8, 8, 10, 50%);
+    glass-surface: rgba(255, 255, 255, 5%);
+    glass-edge:    rgba(255, 255, 255, 10%);
+    fg:            #f0f0f0;
+    fg-muted:      #8a8a8a;
+
+    font: "JetBrainsMono Nerd Font 9";
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+/* ---------- panel: right edge, vertically centred ---------- */
+window {
+    location: east;
+    anchor: east;
+    x-offset: -12px;
+    y-offset: 0px;
+    width: 460px;
+    height: 85%;
+    fullscreen: false;
+    background-color: @glass;
+    border: 1px;
+    border-color: @glass-edge;
+    border-radius: 14px;
+}
+
+mainbox {
+    orientation: vertical;
+    children: [ header, inputbar, listview, footer ];
+    padding: 14px 14px 12px 14px;
+    spacing: 10px;
+}
+
+/* ---------- header (compact, fixed height) ---------- */
+header {
+    orientation: horizontal;
+    children: [ textbox-title, textbox-subtitle ];
+    expand: false;
+    padding: 0px 15px 9px 15px;
+    border: 0px 0px 1px 0px;
+    border-color: @glass-edge;
+}
+
+textbox-title {
+    markup: true;
+    content: "<span letter_spacing='1500'><b>APPLICATIONS</b></span>";
+    expand: true;
+    horizontal-align: 0.0;
+    vertical-align: 0.5;
+}
+
+textbox-subtitle {
+    markup: true;
+    content: "<span letter_spacing='1500'>APPLICATION LAUNCHER</span>";
+    font: "JetBrainsMono Nerd Font 8";
+    expand: true;
+    horizontal-align: 1.0;
+    vertical-align: 0.5;
+    text-color: @fg-muted;
+}
+
+/* ---------- search ---------- */
+inputbar {
+    children: [ textbox-search-icon, entry ];
+    expand: false;
+    spacing: 8px;
+    padding: 9px 14px;
+    background-color: @glass-surface;
+    border: 1px;
+    border-color: @mat-accent-edge;
+    border-radius: 10px;
+}
+
+textbox-search-icon {
+    markup: true;
+    content: "&#xf002;";
+    font: "JetBrainsMono Nerd Font 10";
+    padding: 0px 4px 0px 0px;
+    expand: false;
+    vertical-align: 0.5;
+    text-color: @fg-muted;
+}
+
+entry {
+    expand: true;
+    vertical-align: 0.5;
+    font: "JetBrainsMono Nerd Font 10";
+    placeholder: "Search applications...";
+    placeholder-color: @fg-muted;
+    text-color: @fg;
+    cursor-color: @mat-accent;
+}
+
+/* ---------- application list (takes all remaining height) ---------- */
+listview {
+    columns: 1;
+    lines: 16;
+    expand: true;
+    fixed-height: true;
+    dynamic: false;
+    cycle: true;
+    scrollbar: false;
+    spacing: 2px;
+}
+
+element {
+    orientation: horizontal;
+    spacing: 14px;
+    padding: 4px 14px;
+    border: 1px;
+    border-color: transparent;
+    border-radius: 10px;
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    border-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @mat-accent-soft;
+    border-color: @mat-accent-edge;
+    text-color: @fg;
+}
+
+/* 28px icon + 3px top/bottom = 34px content height, enough for two text lines */
+element-icon {
+    size: 28px;
+    padding: 3px 0px;
+    vertical-align: 0.5;
+    background-color: transparent;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    highlight: bold;
+    background-color: transparent;
+    text-color: inherit;
+}
+
+/* ---------- footer (compact, fixed height) ---------- */
+footer {
+    orientation: horizontal;
+    children: [ textbox-hint-enter, textbox-hint-esc ];
+    expand: false;
+    spacing: 20px;
+    padding: 8px 15px 0px 15px;
+    border: 1px 0px 0px 0px;
+    border-color: @glass-edge;
+}
+
+textbox-hint-enter {
+    markup: true;
+    content: "<b>ENTER</b>  Launch";
+    font: "JetBrainsMono Nerd Font 8";
+    expand: false;
+    text-color: @fg-muted;
+}
+
+textbox-hint-esc {
+    markup: true;
+    content: "<b>ESC</b>  Close";
+    font: "JetBrainsMono Nerd Font 8";
+    expand: true;
+    horizontal-align: 1.0;
+    text-color: @fg-muted;
+}
+
+/* ---------- errors ---------- */
+error-message {
+    padding: 20px;
+    background-color: @glass;
+    border: 1px;
+    border-color: @glass-edge;
+    border-radius: 14px;
+}
