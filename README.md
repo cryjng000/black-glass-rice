@@ -24,7 +24,7 @@ A dark, monochrome, glassy desktop: **Hyprland** (Lua config) with a blurred **W
 ## Quick install
 
 ```bash
-git clone https://github.com/<your-username>/black-glass-rice.git
+git clone https://github.com/cryjng000/black-glass-rice.git
 cd black-glass-rice
 ./install.sh
 ```
