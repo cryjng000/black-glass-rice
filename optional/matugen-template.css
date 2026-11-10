@@ -1,0 +1,3 @@
+/* Matugen template -> generates colors.css for audio-panel.
+   Adjust the keys if your Matugen version/theme uses different names. */
+@define-color ap_accent {{colors.primary.default.hex}};

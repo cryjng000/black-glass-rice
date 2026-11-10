@@ -1,0 +1,3 @@
+/* Fallback palette (monochrome). Matugen overwrites this file — see
+   matugen-template.css. Any @ap_* token from audio-panel.py can be set here. */
+@define-color ap_accent #e6e6e6;
